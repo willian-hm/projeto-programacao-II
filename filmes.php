@@ -22,8 +22,8 @@
         </div>
         <div class="menu-suspenso" id="menuSuspenso">
           <a href="perfil.php">Perfil</a>
-          <a href="addFilmes.php">Cadastrar Filmes</a>
-          <a href="addSeries.php">Cadastrar Séries</a>
+          <a href="cadastrarFilmes.php">Cadastrar Filmes</a>
+          <a href="cadastrarSeries.php">Cadastrar Séries</a>
           <a href="config.php">Configurações</a>
           <a href="index.php">Encerrar sessão</a>
         </div>
