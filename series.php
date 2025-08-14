@@ -13,8 +13,8 @@
     <nav class="header-content">
       <a href="cineverse.html" class="logo">🎬 Cineverse</a>
       <div class="links">
-        <a href="filmes.html">Filmes</a>
-        <a href="series.html">Séries</a>
+        <a href="filmes.php">Filmes</a>
+        <a href="series.php">Séries</a>
       </div>
       <div class="usuario">
         <div class="icone-usuario" onclick="toggleMenu()">
@@ -160,7 +160,7 @@
     });
 
 
-    const filmesAcao = [
+    const seriesAcao = [
       {
         titulo: "Stranger Things",
         ano: 2016,
@@ -240,7 +240,7 @@
         trailer: "https://www.youtube.com/watch?v=aOC8E8z_ifw"
       }
     ];
-    const filmesFiccao = [
+    const seriesFiccao = [
       {
         titulo: "Dark",
         ano: 2017,
@@ -321,7 +321,7 @@
       }
     ];
 
-    const filmesComedia = [
+    const seriesComedia = [
       {
         titulo: "Brooklyn Nine-Nine",
         ano: 2013,
@@ -389,7 +389,7 @@
   }
     ];
 
-    const filmesDrama = [
+    const seriesDrama = [
       {
         titulo: "Breaking Bad",
         ano: 2008,
@@ -470,7 +470,7 @@
       }
     ];
 
-    const filmesAnime = [
+    const seriesAnime = [
       {
         titulo: "Attack on Titan",
         ano: 2013,
@@ -601,11 +601,11 @@
       });
     }
 
-    function gerarFilmes(sectionSelector, filmes) {
+    function gerarSeries(sectionSelector, series) {
       const container = document.querySelector(
         sectionSelector + " .carrossel"
       );
-      filmes.forEach((filme) => {
+      series.forEach((filme) => {
         const div = document.createElement("div");
         div.className = "filme";
         div.innerHTML = `
@@ -620,11 +620,11 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      gerarFilmes("section:nth-of-type(1)", filmesAcao);
-      gerarFilmes("section:nth-of-type(2)", filmesFiccao);
-      gerarFilmes("section:nth-of-type(3)", filmesComedia);
-      gerarFilmes("section:nth-of-type(4)", filmesDrama);
-      gerarFilmes("section:nth-of-type(5)", filmesAnime);
+      gerarSeries("section:nth-of-type(1)", seriesAcao);
+      gerarSeries("section:nth-of-type(2)", seriesFiccao);
+      gerarSeries("section:nth-of-type(3)", seriesComedia);
+      gerarSeries("section:nth-of-type(4)", seriesDrama);
+      gerarSeries("section:nth-of-type(5)", seriesAnime);
 
     });
   </script>
