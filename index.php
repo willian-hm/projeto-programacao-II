@@ -17,11 +17,18 @@
   <main>
     <div class="login-container">
       <h2>Entrar</h2>
-      <input type="text" id="nome" placeholder="Nome">
-      <input type="password" id="senha" placeholder="Senha">
-      <button onclick="fazerLogin()">Login</button>
+      <form action="Assets/bd/loginUsuario.php">
+        <input type="text" id="nome" name="nome" placeholder="Nome">
+        <input type="password" id="senha" name="senha" placeholder="Senha">
+        <input type="submit" value="Login">
+      </form>
       <p><a href="cadastro.php">Não tenho uma conta</a></p>
-      <p id="mensagem"></p>
+      <p id="mensagem" style="color: #ffcccc;">
+        <?php if (isset($_GET['erro'])) {
+          echo htmlspecialchars($_GET['erro']);
+        } ?>
+      </p>
+
     </div>
   </main>
 
@@ -29,27 +36,6 @@
     <p>&copy; 2025 Cineverse. Todos os direitos reservados.</p>
   </footer>
 
-  <script>
-    function fazerLogin() {
-      const nome = document.getElementById("nome").value;
-      const senha = document.getElementById("senha").value;
-      const mensagem = document.getElementById("mensagem");
-
-      if (nome === "usuario" && senha === "1234") {
-        mensagem.style.color = "lightgreen";
-        mensagem.textContent = "Login realizado com sucesso!";
-
-        setTimeout(() => {
-          window.location.href = "cineverse.html";
-        }, 1000);
-      } else {
-        mensagem.style.color = "#ffcccc";
-        mensagem.textContent = "Nome ou senha incorretos.";
-      }
-
-
-    }
-  </script>
 </body>
 
 </html>

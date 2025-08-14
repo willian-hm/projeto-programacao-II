@@ -11,10 +11,10 @@
 <body>
   <header>
     <nav class="header-content">
-      <a href="cineverse.html" class="logo">🎬 Cineverse</a>
+      <a href="cineverse.php" class="logo">🎬 Cineverse</a>
       <div class="links">
-        <a href="filmes.html">Filmes</a>
-        <a href="series.html">Séries</a>
+        <a href="filmes.php">Filmes</a>
+        <a href="series.php">Séries</a>
       </div>
       <div class="usuario">
         <div class="icone-usuario" onclick="toggleMenu()">

@@ -18,9 +18,9 @@
     <div class="login-container">
       <h2>Criar Conta</h2>
       <form action="Assets/bd/cadastroUsuario.php">
-        <input type="text" id="nome" placeholder="Nome completo">
-        <input type="email" id="email" placeholder="E-mail">
-        <input type="password" id="senha" placeholder="Senha">
+        <input type="text" id="nome" name="nome" placeholder="Nome completo" autocomplete="off">
+        <input type="email" id="email" name="email" placeholder="E-mail" autocomplete="off">
+        <input type="password" id="senha" name="senha" placeholder="Senha" autocomplete="off">
         <input type="submit" value="Cadastrar">
       </form>
 
