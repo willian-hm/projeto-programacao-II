@@ -21,9 +21,11 @@
           <span>👤</span>
         </div>
         <div class="menu-suspenso" id="menuSuspenso">
-          <a href="perfil.html">Perfil</a>
-          <a href="config.html">Configurações</a>
-          <a href="index.html">Encerrar sessão</a>
+          <a href="perfil.php">Perfil</a>
+          <a href="addFilmes.php">Cadastrar Filmes</a>
+          <a href="addSeries.php">Cadastrar Séries</a>
+          <a href="config.php">Configurações</a>
+          <a href="index.php">Encerrar sessão</a>
         </div>
       </div>
     </nav>
@@ -81,7 +83,7 @@
 
   <script>
     const destaques = [
-      {
+        {
         titulo: "Duna: Parte 2",
         imagem:
           "https://ingresso-a.akamaihd.net/prd/img/movie/duna-parte-2/04a173f7-6d58-49d3-91de-20f6a07e9513.webp",

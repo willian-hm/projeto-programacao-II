@@ -11,7 +11,7 @@
 <body>
   <header>
     <nav class="header-content">
-      <a href="cineverse.html" class="logo">🎬 Cineverse</a>
+      <a href="cineverse.php" class="logo">🎬 Cineverse</a>
       <div class="links">
         <a href="filmes.php">Filmes</a>
         <a href="series.php">Séries</a>
@@ -21,9 +21,11 @@
           <span>👤</span>
         </div>
         <div class="menu-suspenso" id="menuSuspenso">
-          <a href="perfil.html">Perfil</a>
-          <a href="config.html">Configurações</a>
-          <a href="index.html">Encerrar sessão</a>
+          <a href="perfil.php">Perfil</a>
+          <a href="addFilmes.php">Cadastrar Filmes</a>
+          <a href="addSeries.php">Cadastrar Séries</a>
+          <a href="config.php">Configurações</a>
+          <a href="index.php">Encerrar sessão</a>
         </div>
       </div>
     </nav>
