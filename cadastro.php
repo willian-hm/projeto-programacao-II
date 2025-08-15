@@ -18,9 +18,9 @@
     <div class="login-container">
       <h2>Criar Conta</h2>
       <form action="Assets/bd/cadastroUsuario.php">
-        <input type="text" id="nome" name="nome" placeholder="Nome completo" autocomplete="off">
-        <input type="email" id="email" name="email" placeholder="E-mail" autocomplete="off">
-        <input type="password" id="senha" name="senha" placeholder="Senha" autocomplete="off">
+        <input type="text" id="nome" name="nome" placeholder="Nome completo" autocomplete="off" required>
+        <input type="email" id="email" name="email" placeholder="E-mail" autocomplete="off" required>
+        <input type="password" id="senha" name="senha" placeholder="Senha" autocomplete="off" required>
         <input type="submit" value="Cadastrar">
       </form>
 
@@ -36,34 +36,6 @@
     <p>&copy; 2025 Cineverse. Todos os direitos reservados.</p>
   </footer>
 
-  <script>
-    function fazerCadastro() {
-      const nome = document.getElementById("nome").value;
-      const email = document.getElementById("email").value;
-      const senha = document.getElementById("senha").value;
-      const confirmarSenha = document.getElementById("confirmarSenha").value;
-      const mensagem = document.getElementById("mensagemCadastro");
-
-      if (!nome || !email || !senha || !confirmarSenha) {
-        mensagem.style.color = "#ffcccc";
-        mensagem.textContent = "Por favor, preencha todos os campos.";
-        return;
-      }
-
-      if (senha !== confirmarSenha) {
-        mensagem.style.color = "#ffcccc";
-        mensagem.textContent = "As senhas não coincidem.";
-        return;
-      }
-
-      mensagem.style.color = "lightgreen";
-      mensagem.textContent = "Cadastro realizado com sucesso!";
-
-      setTimeout(() => {
-        window.location.href = "cineverse.php";
-      }, 1000);
-    }
-  </script>
 </body>
 
 </html>

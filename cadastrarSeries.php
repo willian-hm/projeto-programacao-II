@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cineverse</title>
+    <title>Cineverse - Cadastrar Séries</title>
     <link rel="stylesheet" href="Assets/css/style.css" />
 </head>
 
@@ -31,10 +31,59 @@
         </nav>
     </header>
 
-    <form action="">
+    <main>
+        <div class="login-container">
+            <h2>Cadastrar Séries</h2>
+            <form action="Assets/bd/cadastrarSerie.php">
 
-    </form>
+                <label for="titulo">Título</label>
+                <input type="text" name="titulo" id="titulo" placeholder="Título" required>
 
+                <label for="ano">Ano de Lançamento</label>
+                <input type="number" name="ano" id="ano" placeholder="Ano" required>
+
+                <label for="idclassificao">Classificação Indicativa</label>
+                <select name="idclassificao" id="idclassificacao">
+
+                </select>
+
+                <label for="idcategoria">Categoria</label>
+                <select name="idcategoria" id="idcategoria">
+
+                </select>
+
+                <label for="sinopse">Sinopse</label>
+                <textarea name="sinopse" id="sinopse" placeholder="Sinopse"></textarea>
+
+                <label for="imagem">Cartaz do Série</label>
+                <input type="file" name="imagem" id="imagem" placeholder="Banner" required>
+
+                <label for="imagemModal">Imagem do Filme</label>
+                <input type="file" name="imagemModal" id="imagemModal" placeholder="Imagem Modal" required>
+
+                <label for="diretor">Diretor</label>
+                <input type="text" name="diretor" id="diretor" placeholder="Diretor" required>
+
+                <label for="elenco">Elenco</label>
+                <textarea name="elenco" id="elenco" placeholder="Elenco"></textarea>
+
+                <label for="temporadas">Temporadas</label>
+                <input type="number" name="temporadas" id="temporadas" placeholder="Quantidade de Temporadas">
+
+                <label for="episodios">Episódios</label>
+                <input type="number" name="episodios" id="episodios" placeholder="Quantidade de Episódios">
+
+                <label for="oscar">Quantidade de Oscar</label>
+                <input type="text" name="oscar" id="oscar" placeholder="Prêmios/Oscar" required>
+
+                <label for="trailer">Link do trailer da série</label>
+                <input type="text" name="trailer" id="trailer" placeholder="Trailer" required>
+
+                <input type="submit" value="Cadastrar Série">
+            </form>
+            
+        </div>
+    </main>
 
     <footer>&copy; 2025 Cineverse. Todos os direitos reservados.</footer>
 
@@ -52,65 +101,8 @@
                 menu.style.display = "none";
             }
         });
-
-        function abrirModal(filme) {
-            document.getElementById("modal-img").src = filme.imagemModal;
-            document.getElementById("modal-titulo").textContent = filme.titulo;
-            document.getElementById(
-                "modal-info"
-            ).textContent = `${filme.ano} • ${filme.classificacao}`;
-            document.getElementById("modal-diretor").textContent =
-                "Diretor: " + filme.diretor;
-            document.getElementById("modal-atores").textContent =
-                "Atores Principais: " + filme.atores;
-            document.getElementById("modal-sinopse").textContent =
-                "Sinopse: " + filme.sinopse;
-            if (filme.premios !== "") {
-                document.getElementById("modal-premio").textContent =
-                    "Premios e indicações";
-                document.getElementById("modal-premio").href = filme.premios;
-            }
-            document.getElementById("link-trailer").href = filme.trailer;
-            document.getElementById("modal").style.display = "flex";
-        }
-
-        function fecharModal() {
-            document.getElementById("modal").style.display = "none";
-            filme.premios = "";
-        }
-
-        function scrollCarrossel(botao, direcao) {
-            const container = botao.parentElement.querySelector(".carrossel");
-            const larguraItem = container.querySelector(".filme").offsetWidth + 16;
-            container.scrollBy({
-                left: larguraItem * direcao,
-                behavior: "smooth",
-            });
-        }
-
-        function gerarFilmes(sectionSelector, filmes) {
-            const container = document.querySelector(
-                sectionSelector + " .carrossel"
-            );
-            filmes.forEach((filme) => {
-                const div = document.createElement("div");
-                div.className = "filme";
-                div.innerHTML = `
-      <img src="${filme.imagem}" alt="${filme.titulo
-                    }" onclick='abrirModal(${JSON.stringify(filme)})' />
-      <div class="filme-info">
-        <strong>${filme.titulo}</strong><br/>
-        ${filme.ano} • ${filme.classificacao}
-      </div>`;
-                container.appendChild(div);
-            });
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            gerarFilmes("section:nth-of-type(2)", filmesLancamento);
-            gerarFilmes("section:nth-of-type(3)", filmesOscar);
-        });
     </script>
+
 </body>
 
 </html>

@@ -442,3 +442,79 @@ footer {
   bottom: 0;
   width: 98.37%;
 }
+
+.cadastro-container {
+  background: linear-gradient(145deg, #2c2c2c, #1e1e1e);
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  width: 600px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cadastro-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cadastro-container h2 {
+  margin-bottom: 25px;
+  color: #f0f0f0;
+  font-size: 1.8em;
+}
+
+.cadastro-container input, select, textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #3a3a3a;
+  color: #fff;
+  font-size: 1em;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cadastro-container input:focus {
+  background-color: #4a4a4a;
+  outline: none;
+  box-shadow: 0 0 0 2px #666;
+}
+
+.cadastro-container button, input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cadastro-container button:hover {
+  background-color: #777;
+  transform: scale(1.02);
+}
+
+.cadastro-container button:active {
+  transform: scale(0.98);
+}
+
+.cadastro-container a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #bbb;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: color 0.3s;
+}
+
+.cadastro-container a:hover {
+  color: #fff;
+}

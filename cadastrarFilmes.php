@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cineverse - Cadastrar Filme</title>
+    <title>Cineverse - Cadastrar Séries</title>
     <link rel="stylesheet" href="Assets/css/style.css" />
 </head>
 
@@ -32,25 +32,66 @@
     </header>
 
     <main>
-        <div class="login-container">
-            <h2>Cadastrar Filme</h2>
-            <form action="Assets/bd/cadastrarFilme.php" method="POST" onsubmit="return validarCadastro(event)">
-                <input type="text" name="idfilme" id="idfilme" placeholder="ID do Filme">
-                <input type="text" name="titulo" id="titulo" placeholder="Título">
-                <input type="number" name="ano" id="ano" placeholder="Ano">
-                <input type="text" name="idcategoria" id="idcategoria" placeholder="ID da Categoria">
-                <input type="text" name="idclassificacao" id="idclassificacao" placeholder="ID da Classificação">
-                <input type="text" name="sinopse" id="sinopse" placeholder="Sinopse"></input>
-                <p>cu</p>
-                <input type="file" name="imagem" id="imagem" placeholder="Banner">
-                <input type="file" name="imagemModal" id="imagemModal" placeholder="Imagem Modal">
-                <input type="text" name="diretor" id="diretor" placeholder="Diretor">
-                <input type="text" name="elenco" id="elenco" placeholder="Elenco">
-                <input type="text" name="oscar" id="oscar" placeholder="Prêmios/Oscar">
-                <input type="text" name="trailer" id="trailer" placeholder="Trailer">
-                <input type="submit" value="Cadastrar Filme">
+        <div class="cadastro-container">
+            <h2>Cadastrar Séries</h2>
+            <form action="Assets/bd/cadastrarFilme.php">
+
+                <label for="titulo">Título</label>
+                <input type="text" name="titulo" id="titulo" placeholder="Título" required>
+
+                <label for="ano">Ano de Lançamento</label>
+                <input type="number" name="ano" id="ano" placeholder="Ano" required>
+
+                <label for="idclassificao">Classificação Indicativa</label>
+                <select name="idclassificao" id="idclassificacao">
+                    <?php
+                    require_once "Assets/bd/ClassificacaoDAO.php";
+                    $classificacaos = ClassificacaoDAO::listar();
+                    foreach ($classificacaos as $classificacao) {
+                        ?>
+                        <option value="<?= $classificacao['idclassificacao'] ?>"><?= $classificacao['nomeclassificacao'] ?></option>
+                        <?php
+                    }
+                    ?>
+                </select>
+
+                <label for="idcategoria">Categoria</label>
+                <select name="idcategoria" id="idcategoria">
+                    <?php
+                    require_once "Assets/bd/CategoriaDAO.php";
+                    $categorias = CategoriaDAO::listar();
+                    foreach ($categorias as $categoria) {
+                        ?>
+                        <option value="<?= $categoria['idcategoria'] ?>"><?= $categoria['nomecategoria'] ?></option>
+                        <?php
+                    }
+                    ?>
+                </select>
+
+                <label for="sinopse">Sinopse</label>
+                <textarea name="sinopse" id="sinopse" placeholder="Sinopse"></textarea>
+
+                <label for="imagem">Cartaz do Série</label>
+                <input type="file" name="imagem" id="imagem" placeholder="Banner" required>
+
+                <label for="imagemModal">Imagem do Filme</label>
+                <input type="file" name="imagemModal" id="imagemModal" placeholder="Imagem Modal" required>
+
+                <label for="diretor">Diretor</label>
+                <input type="text" name="diretor" id="diretor" placeholder="Diretor" required>
+
+                <label for="elenco">Elenco</label>
+                <textarea name="elenco" id="elenco" placeholder="Elenco"></textarea>
+
+                <label for="oscar">Quantidade de Oscar</label>
+                <input type="text" name="oscar" id="oscar" placeholder="Prêmios/Oscar" required>
+
+                <label for="trailer">Link do trailer da série</label>
+                <input type="text" name="trailer" id="trailer" placeholder="Trailer" required>
+
+                <input type="submit" value="Cadastrar Série">
             </form>
-            <p id="mensagemCadastro"></p>
+
         </div>
     </main>
 
@@ -65,39 +106,13 @@
         window.addEventListener("click", function (event) {
             const menu = document.getElementById("menuSuspenso");
             const icon = document.querySelector(".icone-usuario");
+
             if (!icon.contains(event.target) && !menu.contains(event.target)) {
                 menu.style.display = "none";
             }
         });
-
-        function validarCadastro(event) {
-            event.preventDefault();
-            const campos = [
-                "idfilme", "titulo", "ano", "idcategoria", "idclassificacao",
-                "sinopse", "imagem", "imagemModal", "diretor", "elenco", "oscar", "trailer"
-            ];
-            let valido = true;
-            campos.forEach(campo => {
-                if (!document.getElementById(campo).value.trim()) {
-                    valido = false;
-                }
-            });
-
-            const mensagem = document.getElementById("mensagemCadastro");
-            if (!valido) {
-                mensagem.style.color = "#ffcccc";
-                mensagem.textContent = "Por favor, preencha todos os campos.";
-                return false;
-            }
-
-            mensagem.style.color = "lightgreen";
-            mensagem.textContent = "Filme cadastrado com sucesso!";
-            setTimeout(() => {
-                event.target.submit();
-            }, 1000);
-            return true;
-        }
     </script>
+
 </body>
 
 </html>
