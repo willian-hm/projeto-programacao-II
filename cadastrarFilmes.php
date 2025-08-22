@@ -32,9 +32,9 @@
     </header>
 
     <main>
-        <div class="cadastro-container">
-            <h2>Cadastrar Séries</h2>
-            <form action="Assets/bd/cadastrarFilme.php">
+        <div class="login-container">
+            <h2>Cadastrar Filmes</h2>
+            <form action="Assets/bd/cadastroFilme.php" method="POST" enctype="multipart/form-data">
 
                 <label for="titulo">Título</label>
                 <input type="text" name="titulo" id="titulo" placeholder="Título" required>
@@ -42,8 +42,8 @@
                 <label for="ano">Ano de Lançamento</label>
                 <input type="number" name="ano" id="ano" placeholder="Ano" required>
 
-                <label for="idclassificao">Classificação Indicativa</label>
-                <select name="idclassificao" id="idclassificacao">
+                <label for="idclassificacao">Classificação Indicativa</label>
+                <select name="idclassificacao" id="idclassificacao">
                     <?php
                     require_once "Assets/bd/ClassificacaoDAO.php";
                     $classificacaos = ClassificacaoDAO::listar();
@@ -68,30 +68,24 @@
                     ?>
                 </select>
 
-                <label for="sinopse">Sinopse</label>
-                <textarea name="sinopse" id="sinopse" placeholder="Sinopse"></textarea>
-
-                <label for="imagem">Cartaz do Série</label>
+                <label for="imagem">Cartaz do Filme</label>
                 <input type="file" name="imagem" id="imagem" placeholder="Banner" required>
-
-                <label for="imagemModal">Imagem do Filme</label>
-                <input type="file" name="imagemModal" id="imagemModal" placeholder="Imagem Modal" required>
 
                 <label for="diretor">Diretor</label>
                 <input type="text" name="diretor" id="diretor" placeholder="Diretor" required>
 
                 <label for="elenco">Elenco</label>
-                <textarea name="elenco" id="elenco" placeholder="Elenco"></textarea>
+                <input type="text" name="elenco" id="elenco" placeholder="elenco" required>
 
                 <label for="oscar">Quantidade de Oscar</label>
                 <input type="text" name="oscar" id="oscar" placeholder="Prêmios/Oscar" required>
 
-                <label for="trailer">Link do trailer da série</label>
+                <label for="trailer">Link do trailer da Filme</label>
                 <input type="text" name="trailer" id="trailer" placeholder="Trailer" required>
 
-                <input type="submit" value="Cadastrar Série">
+                <input type="submit" value="Cadastrar Filme">
             </form>
-
+            
         </div>
     </main>
 

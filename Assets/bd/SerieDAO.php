@@ -1,6 +1,6 @@
 <?php
 require_once "ConexaoBD.php";
-require "src/Util.php";
+require "Util.php";
 
 class serieDAO
 {
@@ -10,34 +10,31 @@ class serieDAO
 
         $titulo = $dados['titulo'];
         $ano = $dados['ano'];
-        $idcategoria = $dados['idcategoria'];
         $idclassificacao = $dados['idclassificacao'];
-        $sinopse = $dados['sinopse'];
+        $idcategoria = $dados['idcategoria'];
         $imagem = Util::salvarArquivo();
-        $imagemModal = Util::salvarArquivo();
         $diretor = $dados['diretor'];
         $elenco = $dados['elenco'];
-        $episodios = $dados['episodios'];
         $temporadas = $dados['temporadas'];
+        $episodios = $dados['episodios'];
         $oscar = $dados['oscar'];
         $trailer = $dados['trailer'];
 
 
-        $sql = "INSERT INTO serie (titulo, ano, idcategoria, idclassificacao, sinopse, imagem, imagemModal, diretor, elenco, episodios, temporadas, oscar, trailer) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO serie (titulo, ano, idclassificacao, idcategoria, imagem, diretor, elenco, temporadas, episodios, oscar, trailer) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(1, $titulo);
         $stmt->bindParam(2, $ano);
-        $stmt->bindParam(3, $idcategoria);
-        $stmt->bindParam(4, $idclassificacao);
-        $stmt->bindParam(5, $sinopse);
-        $stmt->bindParam(6, $imagem);
-        $stmt->bindParam(7, $imagemModal);
-        $stmt->bindParam(8, $diretor);
-        $stmt->bindParam(9, $elenco);
-        $stmt->bindParam(10, $episodios);
-        $stmt->bindParam(11, $temporadas);
-        $stmt->bindParam(12, $oscar);
-        $stmt->bindParam(13, $trailer);
+        $stmt->bindParam(3, $idclassificacao);
+        $stmt->bindParam(4, $idcategoria);
+        $stmt->bindParam(5, $imagem);
+        $stmt->bindParam(6, $diretor);
+        $stmt->bindParam(7, $elenco);
+        $stmt->bindParam(8, $temporadas);
+        $stmt->bindParam(9, $episodios);
+        $stmt->bindParam(10, $oscar);
+        $stmt->bindParam(11, $trailer);
+
 
         $stmt->execute();
     }

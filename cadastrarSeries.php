@@ -34,7 +34,7 @@
     <main>
         <div class="login-container">
             <h2>Cadastrar Séries</h2>
-            <form action="Assets/bd/cadastrarSerie.php">
+            <form action="Assets/bd/cadastrarSerie.php" method="POST" enctype="multipart/form-data">
 
                 <label for="titulo">Título</label>
                 <input type="text" name="titulo" id="titulo" placeholder="Título" required>
@@ -42,30 +42,40 @@
                 <label for="ano">Ano de Lançamento</label>
                 <input type="number" name="ano" id="ano" placeholder="Ano" required>
 
-                <label for="idclassificao">Classificação Indicativa</label>
-                <select name="idclassificao" id="idclassificacao">
-
+                <label for="idclassificacao">Classificação Indicativa</label>
+                <select name="idclassificacao" id="idclassificacao">
+                    <?php
+                    require_once "Assets/bd/ClassificacaoDAO.php";
+                    $classificacaos = ClassificacaoDAO::listar();
+                    foreach ($classificacaos as $classificacao) {
+                        ?>
+                        <option value="<?= $classificacao['idclassificacao'] ?>"><?= $classificacao['nomeclassificacao'] ?></option>
+                        <?php
+                    }
+                    ?>
                 </select>
 
                 <label for="idcategoria">Categoria</label>
                 <select name="idcategoria" id="idcategoria">
-
+                    <?php
+                    require_once "Assets/bd/CategoriaDAO.php";
+                    $categorias = CategoriaDAO::listar();
+                    foreach ($categorias as $categoria) {
+                        ?>
+                        <option value="<?= $categoria['idcategoria'] ?>"><?= $categoria['nomecategoria'] ?></option>
+                        <?php
+                    }
+                    ?>
                 </select>
-
-                <label for="sinopse">Sinopse</label>
-                <textarea name="sinopse" id="sinopse" placeholder="Sinopse"></textarea>
 
                 <label for="imagem">Cartaz do Série</label>
                 <input type="file" name="imagem" id="imagem" placeholder="Banner" required>
-
-                <label for="imagemModal">Imagem do Filme</label>
-                <input type="file" name="imagemModal" id="imagemModal" placeholder="Imagem Modal" required>
 
                 <label for="diretor">Diretor</label>
                 <input type="text" name="diretor" id="diretor" placeholder="Diretor" required>
 
                 <label for="elenco">Elenco</label>
-                <textarea name="elenco" id="elenco" placeholder="Elenco"></textarea>
+                <input type="text" name="elenco" id="elenco" placeholder="elenco" required>
 
                 <label for="temporadas">Temporadas</label>
                 <input type="number" name="temporadas" id="temporadas" placeholder="Quantidade de Temporadas">
