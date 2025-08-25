@@ -1,3 +1,15 @@
+<!--
+
+- tirar slider por outro (https://www.youtube.com/watch?v=BpzyuuPIEaQ&t=246s)
+
+- listar filmes
+
+- listar séries
+
+- Oscar
+
+-->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -6,6 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cineverse</title>
   <link rel="stylesheet" href="Assets/css/style.css" />
+  <link rel="stylesheet" href="slider.css" />
 </head>
 
 <body>
@@ -30,6 +43,29 @@
       </div>
     </nav>
   </header>
+
+  <div class="slider">
+    <div class="slides">
+      <input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio1">
+
+      <div class="slide-first">
+        <img src="" alt="img 1">
+      </div>
+      <div class="slide">
+        <img src="" alt="img 2">
+      </div>
+      <div class="slide">
+        <img src="" alt="img 3">
+      </div>
+      <div class="slide">
+        <img src="" alt="img 4">
+      </div>
+    </div>
+
+  </div>
 
   <section id="slider" class="slider">
     <div class="slider-content">
@@ -117,116 +153,8 @@
         premios: "https://decider.com/2025/05/22/joachim-trier-sentimental-value-movie-review-cannes-film-festival-2025/",
         trailer: "https://www.youtube.com/watch?v=example"
       },
-      {
-        titulo: "Vitória",
-        tipo: "Filme",
-        ano: 2025,
-        classificacao: "12 anos",
-        sinopse: "Baseado na história real de Joana Zeferino da Paz, que denunciou atividades criminosas em sua comunidade.",
-        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOCFosPV49U2NtMpNGpY1Llwu9D-lvSBDMvw&s",
-        imagemModal: "https://s2-g1.glbimg.com/noYncBuKZ198BU1BOo7G1_VCAS4=/1920x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/x/2/mZrFRqTwCAnsQw69MZAw/vitoria-foto1.jpg",
-        diretor: "Diretor Brasileiro",
-        atores: "Fernanda Montenegro",
-        episodios: "Filme único",
-        premios: "https://pt.wikipedia.org/wiki/Vit%C3%B3ria_%28filme%29",
-        trailer: "https://www.youtube.com/watch?v=example"
-      },
-      {
-        titulo: "Missão: Impossível – O Acerto Final",
-        tipo: "Filme",
-        ano: 2025,
-        classificacao: "14 anos",
-        sinopse: "O agente Ethan Hunt enfrenta sua missão mais desafiadora em uma corrida contra o tempo para salvar o mundo.",
-        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkwuFveHXwLBUwtjRu7e1yDYfFIwmwcMNM9g&s",
-        imagemModal: "https://universodosfilmes.com.br/wp-content/uploads/2024/11/Missao-Impossivel-O-Acerto-Final.jpg",
-        diretor: "Christopher McQuarrie",
-        atores: "Tom Cruise, Hayley Atwell",
-        episodios: "Filme único",
-        premios: "https://www.oficinadanet.com.br/entretenimento/61854-lancamentos-filmes-cinema-22-maio-2025",
-        trailer: "https://www.youtube.com/watch?v=example"
-      },
-      {
-        titulo: "Lilo & Stitch (Live-action)",
-        tipo: "Filme",
-        ano: 2025,
-        classificacao: "Livre",
-        sinopse: "Uma jovem havaiana adota um alienígena fugitivo, formando uma amizade inusitada e aprendendo sobre 'ohana'.",
-        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYsDjI7A4lADf5wYTXnNM0Fqq7yFF-KauI8Q&s",
-        imagemModal: "https://sm.ign.com/t/ign_br/video/l/lilo-stitc/lilo-stitch-official-trailer_h3yt.640.png",
-        diretor: "Diretor",
-        atores: "Atores",
-        episodios: "Filme único",
-        premios: "https://olhardigital.com.br/2025/05/22/cinema-e-streaming/cinema-lancamentos-de-filmes-da-semana-22-de-maio/",
-        trailer: "https://www.youtube.com/watch?v=example"
-      },
-      {
-        titulo: "Alien: Earth",
-        tipo: "Série",
-        ano: 2025,
-        classificacao: "16 anos",
-        sinopse: "Prequela da franquia Alien, explorando os primeiros encontros da humanidade com os xenomorfos.",
-        imagem: "https://m.media-amazon.com/images/M/MV5BNTI5NDBmODctOGRlOS00NGM5LTkyNzctZTZhOWU3YzA5Zjc3XkEyXkFqcGc@._V1_.jpg",
-        imagemModal: "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/01/Alien-Earth.png?w=1024",
-        diretor: "Diretor",
-        atores: "Atores",
-        episodios: "1ª temporada",
-        premios: "https://time.com/7285497/most-anticipated-tv-shows-summer-2025/",
-        trailer: "https://www.youtube.com/watch?v=example"
-      },
     ]
     const filmesOscar = [
-      {
-        titulo: "O Senhor dos Anéis: O Retorno do Rei",
-        ano: 2003,
-        classificacao: "14 anos",
-        sinopse: "A batalha final pela Terra Média enquanto Frodo e Sam avançam para destruir o Um Anel.",
-        imagem: "https://upload.wikimedia.org/wikipedia/pt/0/0d/EsdlaIII.jpg",
-        imagemModal: "https://i.ytimg.com/vi/OQgySPQ5M3Y/maxresdefault.jpg",
-        diretor: "Peter Jackson",
-        atores: "Elijah Wood, Viggo Mortensen, Ian McKellen",
-        episodios: "Filme único",
-        premios: "11 Oscars, incluindo Melhor Filme",
-        trailer: "https://www.youtube.com/watch?v=r5X-hFf6Bwo"
-      },
-      {
-        titulo: "Indiana Jones e os Caçadores da Arca Perdida",
-        ano: 1981,
-        classificacao: "12 anos",
-        sinopse: "O arqueólogo Indiana Jones tenta impedir que nazistas encontrem a Arca da Aliança.",
-        imagem: "https://br.web.img3.acsta.net/medias/nmedia/18/91/97/58/20172484.jpg",
-        imagemModal: "https://rollingstone.com.br/media/_versions/indiana_jones_arca_perdida_reproducao_widelg.jpg",
-        diretor: "Steven Spielberg",
-        atores: "Harrison Ford, Karen Allen",
-        episodios: "Filme único",
-        premios: "5 Oscars técnicos",
-        trailer: "https://www.youtube.com/watch?v=XkkzKHCx154"
-      },
-      {
-        titulo: "Corra!",
-        ano: 2017,
-        classificacao: "16 anos",
-        sinopse: "Um jovem negro visita a família da namorada branca e descobre segredos assustadores.",
-        imagem: "https://br.web.img3.acsta.net/pictures/17/04/19/21/08/577190.jpg",
-        imagemModal: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVJr2FuHUDRq8Tke7A9LuMdvnhjS9SO3o2Vw&s",
-        diretor: "Jordan Peele",
-        atores: "Daniel Kaluuya, Allison Williams",
-        episodios: "Filme único",
-        premios: "Oscar de Melhor Roteiro Original",
-        trailer: "https://www.youtube.com/watch?v=DzfpyUB60YY"
-      },
-      {
-        titulo: "O Poderoso Chefão",
-        ano: 1972,
-        classificacao: "18 anos",
-        sinopse: "A saga da família mafiosa Corleone e sua luta pelo poder.",
-        imagem: "https://ingresso-a.akamaihd.net/prd/img/movie/o-poderoso-chefao-50-anos/008274f7-a76d-484f-8b5b-1c639c2ce46b.jpg",
-        imagemModal: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSGCq8kdDTcITZwTKJho1Ptv-LP5ildWOc7A&s",
-        diretor: "Francis Ford Coppola",
-        atores: "Marlon Brando, Al Pacino",
-        episodios: "Filme único",
-        premios: "3 Oscars, incluindo Melhor Filme",
-        trailer: "https://www.youtube.com/watch?v=sY1S34973zA"
-      },
       {
         titulo: "Titanic",
         ano: 1997,
